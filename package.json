@@ -10,5 +10,6 @@
     "buildsInSource": true
   },
   "dependencies": {
+    "ocaml": "~4.6.0"
   }
 }
