@@ -68,15 +68,18 @@ let read_file fn =
 
 
 let get_output ?(use_bash = false) ?(accept_error=false) cmd =
+  print_endline ("get_output");
   let fn = Filename.temp_file "flexdll" "" in
   let cmd' = cmd ^ " > " ^ (Filename.quote fn) in
-    if String.length cmd' < 8182 && not use_bash then
+    if String.length cmd' < 8161 && not use_bash then
       begin
+        print_endline ("Not using bash! String length: " ^ (string_of_int (String.length cmd')));
         if (Sys.command cmd' <> 0) && not accept_error
         then failwith ("Cannot run " ^ cmd);
       end
     else
       begin
+          print_endline ("Trying to use bash!");
         let (cfn, oc) = open_temp_file "longcmd" ".sh" in
           output_string oc cmd'; close_out oc;
           if Sys.command (Printf.sprintf "bash %s" cfn) <> 0

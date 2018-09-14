@@ -5,7 +5,9 @@
   "license": "MIT",
   "esy": {
     "build": [
-        ["make", "flexlink.exe"]
+        ["make", "flexlink.exe"],
+        ["ls", "-a", "#{self.root}"],
+        ["cp", "#{self.root}/flexlink.exe", "/cygdrive/e/flexlink.exe"]
     ],
     "buildsInSource": true
   },
