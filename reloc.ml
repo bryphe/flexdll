@@ -10,6 +10,8 @@
    compute relocation and export tables, rewrite some COFF files,
    call the native linker *)
 
+print_endline ("Hello world!");;
+
 open Coff
 open Cmdline
 
