@@ -1,0 +1,16 @@
+{
+  "hash": "2a0dedc62a94b29c49765c8ac4f7f3b3",
+  "root": "flexdll@path:.",
+  "node": {
+    "flexdll@path:.": {
+      "record": {
+        "name": "flexdll",
+        "version": "path:.",
+        "source": "path:.",
+        "files": [],
+        "opam": null
+      },
+      "dependencies": []
+    }
+  }
+}
